@@ -10,9 +10,9 @@ const creators = [
   },
   {
     name: 'Pranay De',
-    github: '',
-    linkedin: '',
-    instagram: ''
+    github: 'https://github.com/PRANAY130',
+    linkedin: 'https://www.linkedin.com/in/pranay-de-026370312/',
+    instagram: 'https://www.instagram.com/__.aegon.__/'
   }
 ];
 
