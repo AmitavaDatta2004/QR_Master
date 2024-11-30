@@ -81,7 +81,7 @@ export function QRPreview({ value, style }: QRPreviewProps) {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
-      <div className="bg-white p-4 rounded-xl shadow-lg">
+      <div className="bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 p-6 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
         <div ref={qrContainerRef} className="hidden">
           <QRCodeSVG
             value={value || ' '}
@@ -94,7 +94,7 @@ export function QRPreview({ value, style }: QRPreviewProps) {
         </div>
         <canvas
           ref={canvasRef}
-          className="rounded-lg"
+          className="rounded-lg shadow-inner"
           style={{ width: style.size, height: style.size }}
         />
       </div>
@@ -103,9 +103,10 @@ export function QRPreview({ value, style }: QRPreviewProps) {
         <button
           onClick={downloadQRCode}
           className={cn(
-            "flex items-center space-x-2 px-4 py-2 rounded-lg",
-            "bg-indigo-600 text-white hover:bg-indigo-700",
-            "transition-colors duration-200"
+            "flex items-center space-x-2 px-6 py-3 rounded-full",
+            "bg-gradient-to-r from-indigo-500 to-purple-500 text-white",
+            "hover:from-indigo-600 hover:to-purple-600",
+            "transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           )}
         >
           <Download className="w-5 h-5" />
@@ -115,9 +116,10 @@ export function QRPreview({ value, style }: QRPreviewProps) {
         <button
           onClick={copyQRCode}
           className={cn(
-            "flex items-center space-x-2 px-4 py-2 rounded-lg",
-            "bg-gray-600 text-white hover:bg-gray-700",
-            "transition-colors duration-200"
+            "flex items-center space-x-2 px-6 py-3 rounded-full",
+            "bg-gradient-to-r from-gray-500 to-gray-600 text-white",
+            "hover:from-gray-600 hover:to-gray-700",
+            "transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
           )}
         >
           <Copy className="w-5 h-5" />
@@ -127,3 +129,4 @@ export function QRPreview({ value, style }: QRPreviewProps) {
     </div>
   );
 }
+

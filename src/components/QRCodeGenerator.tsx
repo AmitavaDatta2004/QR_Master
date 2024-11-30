@@ -3,9 +3,10 @@ import { QRCodeData, QRInputType, QRCodeStyle } from '../types/qr';
 import { QRInput } from './QRInput';
 import { QRStyleControls } from './QRStyleControls';
 import { QRPreview } from './QRPreview';
+import { motion } from 'framer-motion';
 
 const defaultStyle: QRCodeStyle = {
-  fgColor: '#000000',
+  fgColor: '#6366F1', // Indigo-500
   bgColor: '#ffffff',
   opacity: 1,
   size: 256,
@@ -32,13 +33,25 @@ export function QRCodeGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-indigo-100 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 p-8 transition-all duration-500">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-8">QR Code Generator</h1>
-          
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 backdrop-blur-lg bg-opacity-80 dark:bg-opacity-80"
+        >
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 mb-8 text-center">
+            QR Code Generator
+          </h1>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-8"
+            >
               <QRInput
                 type={qrData.type}
                 value={qrData.value}
@@ -49,15 +62,22 @@ export function QRCodeGenerator() {
                 style={qrData.style}
                 onStyleChange={handleStyleChange}
               />
-            </div>
+            </motion.div>
 
-            <QRPreview
-              value={qrData.value}
-              style={qrData.style}
-            />
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <QRPreview
+                value={qrData.value}
+                style={qrData.style}
+              />
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 }
+

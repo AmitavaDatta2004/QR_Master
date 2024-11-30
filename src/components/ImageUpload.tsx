@@ -37,7 +37,7 @@ export function ImageUpload({ imageUrl, onImageChange }: ImageUploadProps) {
         {imageUrl && (
           <button
             onClick={handleRemoveImage}
-            className="text-red-600 hover:text-red-700 text-sm flex items-center space-x-1"
+            className="text-red-500 hover:text-red-600 text-sm flex items-center space-x-1 transition-colors duration-300"
           >
             <X className="w-4 h-4" />
             <span>Remove</span>
@@ -55,7 +55,7 @@ export function ImageUpload({ imageUrl, onImageChange }: ImageUploadProps) {
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="text-white flex items-center space-x-2 px-4 py-2 rounded-lg bg-black bg-opacity-50 hover:bg-opacity-70"
+              className="text-white flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
             >
               <Upload className="w-4 h-4" />
               <span>Change Image</span>
@@ -69,10 +69,10 @@ export function ImageUpload({ imageUrl, onImageChange }: ImageUploadProps) {
             "border-2 border-dashed rounded-lg p-6",
             "flex flex-col items-center justify-center",
             "cursor-pointer hover:border-indigo-500 transition-colors",
-            "bg-gray-50 hover:bg-gray-100"
+            "bg-gradient-to-br from-indigo-50 to-purple-50 hover:from-indigo-100 hover:to-purple-100"
           )}
         >
-          <Upload className="w-8 h-8 text-gray-400" />
+          <Upload className="w-8 h-8 text-indigo-400 animate-bounce" />
           <p className="mt-2 text-sm text-gray-600">Click to upload image</p>
           <p className="text-xs text-gray-500">PNG, JPG up to 5MB</p>
         </div>
@@ -88,3 +88,4 @@ export function ImageUpload({ imageUrl, onImageChange }: ImageUploadProps) {
     </div>
   );
 }
+
