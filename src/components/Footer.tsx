@@ -4,15 +4,15 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 const creators = [
   {
     name: 'Amitava Datta',
-    github: 'https://github.com/amitava-datta',
-    linkedin: 'https://linkedin.com/in/amitava-datta',
-    instagram: 'https://instagram.com/amitava.datta'
+    github: '',
+    linkedin: '',
+    instagram: ''
   },
   {
     name: 'Pranay De',
-    github: 'https://github.com/pranay-de',
-    linkedin: 'https://linkedin.com/in/pranay-de',
-    instagram: 'https://instagram.com/pranay.de'
+    github: '',
+    linkedin: '',
+    instagram: ''
   }
 ];
 

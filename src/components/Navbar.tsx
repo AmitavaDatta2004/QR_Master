@@ -20,14 +20,7 @@ export function Navbar() {
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">QR Master</span>
           </Link>
           
-          <div className="flex items-center space-x-4">
-            <Link
-              to="/generator"
-              className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 font-medium"
-            >
-              Generator
-            </Link>
-            
+          <div className="flex items-center space-x-4">           
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 hover:from-indigo-200 hover:to-purple-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-colors duration-300 transform hover:scale-110"

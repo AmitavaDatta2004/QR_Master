@@ -81,7 +81,7 @@ export function QRPreview({ value, style }: QRPreviewProps) {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
-      <div className="bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 p-6 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+      <div className="bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 p-6 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
         <div ref={qrContainerRef} className="hidden">
           <QRCodeSVG
             value={value || ' '}
